@@ -214,7 +214,7 @@ namespace SixLabors.ImageSharp.Benchmarks.General.PixelConversion
             ref byte control = ref MemoryMarshal.GetReference(SimdUtils.HwIntrinsics.PermuteMaskEvenOdd8x32);
             Vector256<int> vcontrol = Unsafe.As<byte, Vector256<int>>(ref control);
 
-            var va = Vector256.Create(1F);
+            Vector256<float> va = Vector256<float>.AllBitsSet;
 
             for (int i = 0; i < count; i++)
             {

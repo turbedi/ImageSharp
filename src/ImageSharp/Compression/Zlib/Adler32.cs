@@ -105,7 +105,7 @@ namespace SixLabors.ImageSharp.Compression.Zlib
                     Vector128<sbyte> tap1 = Sse2.LoadVector128((sbyte*)tapPtr);
                     Vector128<sbyte> tap2 = Sse2.LoadVector128((sbyte*)(tapPtr + 0x10));
                     Vector128<byte> zero = Vector128<byte>.Zero;
-                    var ones = Vector128.Create((short)1);
+                    var ones = Vector128<short>.AllBitsSet;
 
                     while (blocks > 0)
                     {
@@ -189,7 +189,7 @@ namespace SixLabors.ImageSharp.Compression.Zlib
                 byte* localBufferPtr = bufferPtr;
 
                 Vector256<byte> zero = Vector256<byte>.Zero;
-                var dot3v = Vector256.Create((short)1);
+                Vector256<short> dot3v = Vector256<short>.AllBitsSet;
                 var dot2v = Vector256.Create(32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1);
 
                 // Process n blocks of data. At most NMAX data bytes can be

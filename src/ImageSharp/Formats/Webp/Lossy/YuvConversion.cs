@@ -24,7 +24,7 @@ namespace SixLabors.ImageSharp.Formats.Webp.Lossy
         private const int YuvHalf = 1 << (YuvFix - 1);
 
 #if SUPPORTS_RUNTIME_INTRINSICS
-        private static readonly Vector128<byte> One = Vector128.Create((byte)1);
+        private static readonly Vector128<byte> One = Vector128<byte>.AllBitsSet;
 
         // These constants are 14b fixed-point version of ITU-R BT.601 constants.
         // R = (19077 * y             + 26149 * v - 14234) >> 6

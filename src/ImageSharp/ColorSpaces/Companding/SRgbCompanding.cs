@@ -180,7 +180,7 @@ namespace SixLabors.ImageSharp.ColorSpaces.Companding
             {
                 var scale = Vector256.Create((float)Scale);
                 Vector256<float> zero = Vector256<float>.Zero;
-                var offset = Vector256.Create(1);
+                Vector256<int> offset = Vector256<int>.AllBitsSet;
 
                 // Divide by 2 as 4 elements per Vector4 and 8 per Vector256<float>
                 ref Vector256<float> vectorsBase = ref Unsafe.As<Vector4, Vector256<float>>(ref MemoryMarshal.GetReference(vectors));
