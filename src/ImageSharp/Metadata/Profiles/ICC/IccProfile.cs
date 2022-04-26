@@ -156,9 +156,9 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
             }
 
             return arrayValid &&
-                   Enum.IsDefined(typeof(IccColorSpaceType), this.Header.DataColorSpace) &&
-                   Enum.IsDefined(typeof(IccColorSpaceType), this.Header.ProfileConnectionSpace) &&
-                   Enum.IsDefined(typeof(IccRenderingIntent), this.Header.RenderingIntent) &&
+                   Enum.IsDefined(this.Header.DataColorSpace) &&
+                   Enum.IsDefined(this.Header.ProfileConnectionSpace) &&
+                   Enum.IsDefined(this.Header.RenderingIntent) &&
                    this.Header.Size >= minSize &&
                    this.Header.Size < maxSize;
         }

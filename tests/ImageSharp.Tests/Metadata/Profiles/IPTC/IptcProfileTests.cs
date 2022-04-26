@@ -21,7 +21,7 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.IPTC
 
         public static IEnumerable<object[]> AllIptcTags()
         {
-            foreach (object tag in Enum.GetValues(typeof(IptcTag)))
+            foreach (object tag in Enum.GetValues<IptcTag>())
             {
                 yield return new object[] { tag };
             }

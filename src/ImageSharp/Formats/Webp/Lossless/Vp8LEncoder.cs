@@ -491,7 +491,7 @@ namespace SixLabors.ImageSharp.Formats.Webp.Lossless
                 doNotCache = true;
 
                 // Go brute force on all transforms.
-                foreach (EntropyIx entropyIx in Enum.GetValues(typeof(EntropyIx)).Cast<EntropyIx>())
+                foreach (EntropyIx entropyIx in Enum.GetValues<EntropyIx>())
                 {
                     // We can only apply kPalette or kPaletteAndSpatial if we can indeed use a palette.
                     if ((entropyIx != EntropyIx.Palette && entropyIx != EntropyIx.PaletteAndSpatial) || usePalette)

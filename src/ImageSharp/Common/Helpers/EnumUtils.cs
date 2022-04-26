@@ -32,19 +32,5 @@ namespace SixLabors.ImageSharp
 
             return defaultValue;
         }
-
-        /// <summary>
-        /// Returns a value indicating whether the given enum has a flag of the given value.
-        /// </summary>
-        /// <typeparam name="TEnum">The type of enum.</typeparam>
-        /// <param name="value">The value.</param>
-        /// <param name="flag">The flag.</param>
-        /// <returns>The <see cref="bool"/>.</returns>
-        public static bool HasFlag<TEnum>(TEnum value, TEnum flag)
-          where TEnum : Enum
-        {
-            uint flagValue = Unsafe.As<TEnum, uint>(ref flag);
-            return (Unsafe.As<TEnum, uint>(ref value) & flagValue) == flagValue;
-        }
     }
 }

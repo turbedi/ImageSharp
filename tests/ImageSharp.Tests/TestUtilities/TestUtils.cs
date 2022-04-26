@@ -167,7 +167,7 @@ namespace SixLabors.ImageSharp.Tests
         /// Enumerate all available <see cref="PixelTypes"/>-s
         /// </summary>
         /// <returns>The pixel types</returns>
-        internal static PixelTypes[] GetAllPixelTypes() => (PixelTypes[])Enum.GetValues(typeof(PixelTypes));
+        internal static PixelTypes[] GetAllPixelTypes() => Enum.GetValues<PixelTypes>();
 
         internal static Color GetColorByName(string colorName)
         {

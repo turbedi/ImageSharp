@@ -91,7 +91,7 @@ namespace SixLabors.ImageSharp.Tests.TestUtilities.Tests
             {
                 Assert.NotNull(intrinsic);
 
-                switch ((HwIntrinsics)Enum.Parse(typeof(HwIntrinsics), intrinsic))
+                switch (Enum.Parse<HwIntrinsics>(intrinsic))
                 {
 #if SUPPORTS_RUNTIME_INTRINSICS
                     case HwIntrinsics.DisableHWIntrinsic:
@@ -160,7 +160,7 @@ namespace SixLabors.ImageSharp.Tests.TestUtilities.Tests
                 }
             }
 
-            foreach (HwIntrinsics intrinsic in (HwIntrinsics[])Enum.GetValues(typeof(HwIntrinsics)))
+            foreach (HwIntrinsics intrinsic in Enum.GetValues<HwIntrinsics>())
             {
                 FeatureTestRunner.RunWithHwIntrinsicsFeature(AssertHwIntrinsicsFeatureDisabled, intrinsic);
             }
@@ -193,7 +193,7 @@ namespace SixLabors.ImageSharp.Tests.TestUtilities.Tests
                 Assert.NotNull(serializable);
                 Assert.NotNull(FeatureTestRunner.DeserializeForXunit<FakeSerializable>(serializable));
 
-                switch ((HwIntrinsics)Enum.Parse(typeof(HwIntrinsics), intrinsic))
+                switch (Enum.Parse<HwIntrinsics>(intrinsic))
                 {
 #if SUPPORTS_RUNTIME_INTRINSICS
                     case HwIntrinsics.DisableHWIntrinsic:
@@ -262,7 +262,7 @@ namespace SixLabors.ImageSharp.Tests.TestUtilities.Tests
                 }
             }
 
-            foreach (HwIntrinsics intrinsic in (HwIntrinsics[])Enum.GetValues(typeof(HwIntrinsics)))
+            foreach (HwIntrinsics intrinsic in Enum.GetValues<HwIntrinsics>())
             {
                 FeatureTestRunner.RunWithHwIntrinsicsFeature(AssertHwIntrinsicsFeatureDisabled, intrinsic, new FakeSerializable());
             }

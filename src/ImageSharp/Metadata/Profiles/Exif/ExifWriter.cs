@@ -197,7 +197,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Exif
         {
             var result = new List<IExifValue>();
 
-            if (!EnumUtils.HasFlag(this.allowedParts, part))
+            if (!Enum.HasFlag(this.allowedParts, part))
             {
                 return result;
             }

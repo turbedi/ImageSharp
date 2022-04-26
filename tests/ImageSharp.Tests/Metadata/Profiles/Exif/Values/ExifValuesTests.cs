@@ -608,7 +608,7 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Exif.Values
         [MemberData(nameof(EncodedStringTags))]
         public void ExifEncodedStringTests(ExifTag tag)
         {
-            foreach (object code in Enum.GetValues(typeof(EncodedString.CharacterCode)))
+            foreach (object code in Enum.GetValues<EncodedString.CharacterCode>())
             {
                 var charCode = (EncodedString.CharacterCode)code;
 
